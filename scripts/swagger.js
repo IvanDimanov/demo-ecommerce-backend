@@ -26,8 +26,9 @@ const SPEC_TEMPLATE_PLACEHOLDER = '<-- This is where the Swagger JSON will be pl
   console.log(`${INDEX_DEFAULT_PATH} swagger-ui was successfully created`)
 })()
 
+
 const JS_BUNDLE_DEFAULT_PATH = './dist/api/swagger-ui-bundle.js'
-const JS_BUNDLE_TEMPLATE_PLACEHOLDER = 'e.responseInterceptor=f;var x=v()();'
+const JS_BUNDLE_TEMPLATE_PLACEHOLDER = 'e.responseInterceptor=_;var M=u()();'
 const CODE_TEMPLATE = `
 
 /**
@@ -65,6 +66,18 @@ e.parameters = Object.keys(e.parameters)
 ;(async () => {
   const templateContent = fs.readFileSync(JS_BUNDLE_DEFAULT_PATH, 'utf-8')
   const bundleContent = templateContent.replace(JS_BUNDLE_TEMPLATE_PLACEHOLDER, JS_BUNDLE_TEMPLATE_PLACEHOLDER + CODE_TEMPLATE)
+
+  fs.writeFileSync(JS_BUNDLE_DEFAULT_PATH, bundleContent, 'utf-8')
+  console.log(`${JS_BUNDLE_DEFAULT_PATH} was successfully overwritten`)
+})()
+
+
+const JSON_PARSE_REG_EXP = /JSON\.parse/g
+const JSON5_PARSE_TEMPLATE_PLACEHOLDER = 'JSON5.parse'
+
+;(async () => {
+  const templateContent = fs.readFileSync(JS_BUNDLE_DEFAULT_PATH, 'utf-8')
+  const bundleContent = templateContent.replace(JSON_PARSE_REG_EXP, JSON5_PARSE_TEMPLATE_PLACEHOLDER)
 
   fs.writeFileSync(JS_BUNDLE_DEFAULT_PATH, bundleContent, 'utf-8')
   console.log(`${JS_BUNDLE_DEFAULT_PATH} was successfully overwritten`)

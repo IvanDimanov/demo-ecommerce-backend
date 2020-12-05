@@ -4,7 +4,7 @@ const getWhere = require('./getWhere')
 const getOrder = require('./getOrder')
 
 
-const getFindOptions = ({ select = {}, parentModel }) => {
+const getFindOptions = ({ select = {}, parentModel } = {}) => {
   const options = {}
 
   const attributes = getAttributes(select)

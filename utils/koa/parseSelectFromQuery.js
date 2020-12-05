@@ -1,3 +1,5 @@
+const JSON5 = require('json5')
+
 /**
  * When sending query data to our APIs
  * some platforms such as Swagger send the JSON data as a String.
@@ -13,7 +15,7 @@ const parseSelectFromQuery = async (ctx, next) => {
 
   if (typeof select === 'string') {
     try {
-      ctx.request.query.select = JSON.parse(select)
+      ctx.request.query.select = JSON5.parse(select)
     } catch (error) {
       ctx.request.query.select = {}
     }
