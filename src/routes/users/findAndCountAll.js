@@ -128,7 +128,6 @@ router.get('/api/v1/users',
     const users = await models.user.findAndCountAll(findOptions)
 
     ctx.body = users
-    ctx.body = users
   }
 )
 

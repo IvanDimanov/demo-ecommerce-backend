@@ -64,7 +64,6 @@ router.get('/api/v1/products',
     const products = await models.product.findAndCountAll(findOptions)
 
     ctx.body = products
-    ctx.body = products
   }
 )
 
