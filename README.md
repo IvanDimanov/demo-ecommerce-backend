@@ -10,6 +10,7 @@ This project is made as a template for scalable and flexible API endpoints, User
 ## Run locally
 ```
 git clone git@github.com:IvanDimanov/demo-ecommerce-backend.git
+cd ./demo-ecommerce-backend
 npm ci
 cp .env.example .env
 npm start

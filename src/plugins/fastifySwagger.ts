@@ -51,12 +51,12 @@ const plugin = fastifyPlugin(async (
         routePrefix: '/swagger',
         swagger: {
           info: {
-            title: 'Test swagger',
-            description: 'testing the fastify swagger api',
+            title: 'Demo eCommerce BackEnd',
+            description: 'Testing fastify APIs using the predefined validation rules.',
             version: '2.0.0',
           },
           externalDocs: {
-            url: 'https://swagger.io',
+            url: 'https://github.com/IvanDimanov/demo-ecommerce-backend',
             description: 'Find more info here',
           },
           host: SWAGGER_HOST,
