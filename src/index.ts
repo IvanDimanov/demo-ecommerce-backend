@@ -9,6 +9,7 @@ import pluginFastifySwagger from 'plugins/fastifySwagger'
 import pluginDatabase from 'plugins/database'
 
 import preValidationSelectorHook from 'hooks/preValidationSelectorHook'
+import setErrorHandler from 'hooks/setErrorHandler'
 
 import addAllRoutes from 'utils/addAllRoutes'
 
@@ -26,6 +27,7 @@ const start = async () => {
     await fastify.register(pluginDatabase)
 
     preValidationSelectorHook(fastify)
+    setErrorHandler(fastify)
 
     addAllRoutes(fastify)
 

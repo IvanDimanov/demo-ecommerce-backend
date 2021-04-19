@@ -8,7 +8,7 @@ type SelectorQuery = {
 }
 
 
-const preValidationSelectorHook = (fastify: FastifyInstance) => {
+const preValidationSelectorHook = (fastify: FastifyInstance): void => {
   fastify.addHook('preValidation', async (request) => {
     const { whereRules, orderBy, page } = request.query as SelectorQuery
 
