@@ -2,6 +2,6 @@
   "diff": true,
   "package": "./package.json",
   "reporter": "spec",
-  "spec": "./**/*.spec.js",
+  "spec": "./src/**/*.spec.{js,ts}",
   "exclude": "./node_modules/**, ./**/node_modules/**"
 }

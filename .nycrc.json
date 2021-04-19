@@ -1,4 +1,5 @@
 {
+  "extends": "@istanbuljs/nyc-config-typescript",
   "all": true,
   "check-coverage": true,
   "branches": 75,
@@ -15,16 +16,10 @@
     "text",
     "html"
   ],
-  "report-dir": "./dist/test-coverage",
-  "skip-full": true,
+  "report-dir": "./build/test-coverage",
+  "skip-full": false,
   "include": [
-    "database/**/*.js",
-    "src/**/*.js",
-    "utils/**/*.js"
-  ],
-  "exclude": [
-    "**/*.spec.js",
-    "utils/query/getModelByName.js"
+    "src/**/*.{js,ts}"
   ],
   "cache": false
 }

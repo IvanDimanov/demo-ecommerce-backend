@@ -1,26 +1,15 @@
 {
-  "plugins": [
-    "jsdoc"
-  ],
-
   "extends": [
     "eslint:recommended",
     "google",
-    "plugin:jsdoc/recommended"
+    "plugin:@typescript-eslint/recommended"
   ],
 
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
 
   "env": {
     "node": true,
-    "browser": true,
     "mocha": true
-  },
-
-  "globals": {
-    "Promise": true,
-    "expect": true,
-    "should": true
   },
 
   "rules": {
@@ -43,15 +32,8 @@
     ],
     "quote-props": 0,
     "object-curly-spacing": ["error", "always"],
-    "react/display-name": 0,
-    "new-cap": [2, {
-      "capIsNewExceptionPattern": "^(DataTypes|Sequelize)\\.."
-    }],
-    "valid-jsdoc": 0,
-    "jsdoc/check-tag-names": [2, {
-      "definedTags": [
-        "swagger"
-      ]
-    }]
+    "camelcase": 0,
+    "@typescript-eslint/ban-ts-comment": 0,
+    "@typescript-eslint/no-empty-interface": 0
   }
 }
