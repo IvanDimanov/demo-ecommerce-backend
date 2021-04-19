@@ -26,6 +26,7 @@ const onError = require('../utils/koa/onError')
 const applyAllRoutes = require('../utils/koa/applyAllRoutes')
 
 const database = require('../database')
+const database2 = require('../database2')
 
 const getPort = () => process.env.PORT
 
@@ -39,6 +40,7 @@ function createApp() {
 
   /* Provide access to PostgreSQL to all API routes */
   app.context.database = database
+  app.context.database2 = database2
 
 
   app

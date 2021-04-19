@@ -122,12 +122,132 @@ router.get('/api/v1/users',
 
   async (ctx) => {
     const { select } = ctx.request.query
-    const { models } = ctx.database
+    const { models } = ctx.database2
 
-    const findOptions = getFindOptions({ select, parentModel: models.user })
-    const users = await models.user.findAndCountAll(findOptions)
+    // const findOptions = getFindOptions({ select, parentModel: models.user })
+    // const users = await models.user.findAndCountAll(findOptions)
 
-    ctx.body = users
+    // const response = await models.Product
+    //   .query()
+    //   .select(
+    //     'product.id',
+    //     'product.name',
+
+    //     'stores.id as stores.id',
+    //     'stores.name as stores.name',
+    //   )
+    //   .joinRelated('stores')
+    //   .where('stores.id', '00000006-0000-4000-a000-000000000001')
+
+    // const response = await models.User
+    //   .query()
+    //   .select(
+    //     'user.id',
+    //     'user.name',
+    //     'user.email',
+    //     'user.status',
+    //   )
+    //   .withGraphFetched('[stores.[products.[originAddress]]]')
+    //   .modifyGraph('stores', (builder) => {
+    //     builder.select(
+    //       'store.id',
+    //       'store.name',
+    //     )
+    //   })
+    //   .modifyGraph('stores.products', (builder) => {
+    //     builder.select(
+    //       'product.id',
+    //       'product.name',
+    //       'product.price',
+    //       'product.basePrice',
+    //       'product.props',
+    //       'product.totalInStock',
+    //     )
+    //   })
+    //   .modifyGraph('stores.products.originAddress', (builder) => {
+    //     builder.select(
+    //       'address.id',
+    //       'address.addressLine1',
+    //       'address.addressLine2',
+    //       'address.city',
+    //       'address.state',
+    //       'address.country',
+    //       'address.postalCode',
+    //     )
+    //   })
+    //   .page(2, 5)
+
+    // const response = await models.User
+    //   .query()
+    //   .select(
+    //     'user.id',
+    //     'user.name',
+    //     'user.email',
+    //     'user.status',
+    //   )
+    //   .withGraphJoined('[stores.[products.[originAddress]]]')
+    //   .modifyGraph('stores', (builder) => {
+    //     builder.select(
+    //       'store.id',
+    //       'store.name',
+    //     )
+    //   })
+    //   .modifyGraph('stores.products', (builder) => {
+    //     builder.select(
+    //       'product.id',
+    //       'product.name',
+    //       'product.price',
+    //       'product.basePrice',
+    //       'product.props',
+    //       'product.totalInStock',
+    //     )
+    //   })
+    //   .modifyGraph('stores.products.originAddress', (builder) => {
+    //     builder.select(
+    //       'address.id',
+    //       'address.addressLine1',
+    //       'address.addressLine2',
+    //       'address.city',
+    //       'address.state',
+    //       'address.country',
+    //       'address.postalCode',
+    //     )
+    //   })
+    //   .where('stores.name', 'Keep it moving')
+    //   .where('stores:products:originAddress.city', 'Austin')
+
+    const response = await models.User
+      .query()
+      .select(
+        'user.id',
+        'user.name',
+        'user.email',
+        'user.status',
+      )
+      .withGraphJoined('[stores.[products]]')
+      .modifyGraph('stores', (builder) => {
+        builder.select(
+          'store.id',
+          'store.name',
+        )
+      })
+      .modifyGraph('stores.products', (builder) => {
+        builder.select(
+          'product.id',
+          'product.name',
+          'product.price',
+          'product.basePrice',
+          'product.props',
+          'product.totalInStock',
+        )
+        // .where('product.totalInStock', '>', 200)
+      })
+      .where('stores.name', 'Keep it moving')
+      .where('stores:products.totalInStock', '>', 40)
+      // .first()
+      .page(0, 3)
+
+    ctx.body = response
   }
 )
 
