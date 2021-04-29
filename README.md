@@ -1,6 +1,9 @@
 # Demo eCommerce BackEnd framework
 This project is made as a template for scalable and flexible API endpoints, User role permissions, and data access.
 
+## [Live Demo](https://demo-ecommerce-backend.herokuapp.com/swagger)
+## [![App](https://raw.githubusercontent.com/IvanDimanov/demo-ecommerce-backend/master/image.png)](https://demo-ecommerce-backend.herokuapp.com/swagger)
+
 ## Tech stack
 - fastify: [https://www.fastify.io/](https://www.fastify.io/)
 - objection: [https://vincit.github.io/objection.js/](https://vincit.github.io/objection.js/)
