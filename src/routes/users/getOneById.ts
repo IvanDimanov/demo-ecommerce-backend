@@ -1,12 +1,12 @@
 import { FastifyInstance, RouteShorthandOptions } from 'fastify'
 import { FromSchema } from 'json-schema-to-ts'
 
-import UserModel, { schema as userSchema } from 'database/models/User'
-import { schema as storeSchema } from 'database/models/Store'
-import { schema as roleSchema } from 'database/models/Role'
+import UserModel, { schema as userSchema } from '@src/database/models/User'
+import { schema as storeSchema } from '@src/database/models/Store'
+import { schema as roleSchema } from '@src/database/models/Role'
 
-import generateSelectorQuery, { JoinOperationEnum } from 'utils/generateSelectorQuery'
-import joinOperationSchema from 'utils/jsonSchemas/joinOperationSchema'
+import generateSelectorQuery, { JoinOperationEnum } from '@src/utils/generateSelectorQuery'
+import joinOperationSchema from '@src/utils/jsonSchemas/joinOperationSchema'
 
 
 const allowGraph = '[roles, stores]'

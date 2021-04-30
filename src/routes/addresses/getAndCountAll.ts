@@ -1,15 +1,15 @@
 import { FastifyInstance, RouteShorthandOptions } from 'fastify'
 import { FromSchema } from 'json-schema-to-ts'
 
-import AddressModel, { schema as addressSchema } from 'database/models/Address'
-import { schema as orderSchema } from 'database/models/Order'
+import AddressModel, { schema as addressSchema } from '@src/database/models/Address'
+import { schema as orderSchema } from '@src/database/models/Order'
 
-import generateSelectorQuery, { JoinOperationEnum } from 'utils/generateSelectorQuery'
-import joinOperationSchema from 'utils/jsonSchemas/joinOperationSchema'
-import whereRulesSchema from 'utils/jsonSchemas/whereRulesSchema'
-import orderBySchema from 'utils/jsonSchemas/orderBySchema'
-import pageSchema from 'utils/jsonSchemas/pageSchema'
-import totalResultsSchema from 'utils/jsonSchemas/totalResultsSchema'
+import generateSelectorQuery, { JoinOperationEnum } from '@src/utils/generateSelectorQuery'
+import joinOperationSchema from '@src/utils/jsonSchemas/joinOperationSchema'
+import whereRulesSchema from '@src/utils/jsonSchemas/whereRulesSchema'
+import orderBySchema from '@src/utils/jsonSchemas/orderBySchema'
+import pageSchema from '@src/utils/jsonSchemas/pageSchema'
+import totalResultsSchema from '@src/utils/jsonSchemas/totalResultsSchema'
 
 
 const allowGraph = '[order.[shippingAddress]]'

@@ -1,13 +1,13 @@
 import { FastifyInstance, RouteShorthandOptions } from 'fastify'
 import { FromSchema } from 'json-schema-to-ts'
 
-import ProductModel, { schema as productSchema } from 'database/models/Product'
-import { schema as storeSchema } from 'database/models/Store'
-import { schema as vendorSchema } from 'database/models/Vendor'
-import { schema as categorySchema } from 'database/models/Category'
+import ProductModel, { schema as productSchema } from '@src/database/models/Product'
+import { schema as storeSchema } from '@src/database/models/Store'
+import { schema as vendorSchema } from '@src/database/models/Vendor'
+import { schema as categorySchema } from '@src/database/models/Category'
 
-import generateSelectorQuery, { JoinOperationEnum } from 'utils/generateSelectorQuery'
-import joinOperationSchema from 'utils/jsonSchemas/joinOperationSchema'
+import generateSelectorQuery, { JoinOperationEnum } from '@src/utils/generateSelectorQuery'
+import joinOperationSchema from '@src/utils/jsonSchemas/joinOperationSchema'
 
 
 const allowGraph = '[stores, vendor, categories]'

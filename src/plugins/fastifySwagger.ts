@@ -5,7 +5,7 @@ import fastifyPlugin from 'fastify-plugin'
 import fastifySwagger from 'fastify-swagger'
 
 import { FromSchema } from 'json-schema-to-ts'
-import { envVarSchema, envConfigKey } from 'plugins/fastifyEnv'
+import { envVarSchema, envConfigKey } from '@src/plugins/fastifyEnv'
 
 
 const dbModelsAndSchemas = {}

@@ -1,17 +1,17 @@
 import { FastifyInstance, RouteShorthandOptions } from 'fastify'
 import { FromSchema } from 'json-schema-to-ts'
 
-import ProductModel, { schema as productSchema } from 'database/models/Product'
-import { schema as storeSchema } from 'database/models/Store'
-import { schema as vendorSchema } from 'database/models/Vendor'
-import { schema as categorySchema } from 'database/models/Category'
+import ProductModel, { schema as productSchema } from '@src/database/models/Product'
+import { schema as storeSchema } from '@src/database/models/Store'
+import { schema as vendorSchema } from '@src/database/models/Vendor'
+import { schema as categorySchema } from '@src/database/models/Category'
 
-import generateSelectorQuery, { JoinOperationEnum } from 'utils/generateSelectorQuery'
-import joinOperationSchema from 'utils/jsonSchemas/joinOperationSchema'
-import whereRulesSchema from 'utils/jsonSchemas/whereRulesSchema'
-import orderBySchema from 'utils/jsonSchemas/orderBySchema'
-import pageSchema from 'utils/jsonSchemas/pageSchema'
-import totalResultsSchema from 'utils/jsonSchemas/totalResultsSchema'
+import generateSelectorQuery, { JoinOperationEnum } from '@src/utils/generateSelectorQuery'
+import joinOperationSchema from '@src/utils/jsonSchemas/joinOperationSchema'
+import whereRulesSchema from '@src/utils/jsonSchemas/whereRulesSchema'
+import orderBySchema from '@src/utils/jsonSchemas/orderBySchema'
+import pageSchema from '@src/utils/jsonSchemas/pageSchema'
+import totalResultsSchema from '@src/utils/jsonSchemas/totalResultsSchema'
 
 
 const allowGraph = '[stores, vendor, categories]'

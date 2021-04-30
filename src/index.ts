@@ -1,17 +1,17 @@
 import fastifyModule, { FastifyInstance } from 'fastify'
 import { FromSchema } from 'json-schema-to-ts'
 
-import pluginFastifyEnv, { envVarSchema, envConfigKey } from 'plugins/fastifyEnv'
-import pluginFastifyHelmet from 'plugins/fastifyHelmet'
-import pluginFastifyCors from 'plugins/fastifyCors'
-import pluginJson5 from 'plugins/json5'
-import pluginFastifySwagger from 'plugins/fastifySwagger'
-import pluginDatabase from 'plugins/database'
+import pluginFastifyEnv, { envVarSchema, envConfigKey } from '@src/plugins/fastifyEnv'
+import pluginFastifyHelmet from '@src/plugins/fastifyHelmet'
+import pluginFastifyCors from '@src/plugins/fastifyCors'
+import pluginJson5 from '@src/plugins/json5'
+import pluginFastifySwagger from '@src/plugins/fastifySwagger'
+import pluginDatabase from '@src/plugins/database'
 
-import preValidationSelectorHook from 'hooks/preValidationSelectorHook'
-import setErrorHandler from 'hooks/setErrorHandler'
+import preValidationSelectorHook from '@src/hooks/preValidationSelectorHook'
+import setErrorHandler from '@src/hooks/setErrorHandler'
 
-import addAllRoutes from 'utils/addAllRoutes'
+import addAllRoutes from '@src/utils/addAllRoutes'
 
 const start = async () => {
   try {

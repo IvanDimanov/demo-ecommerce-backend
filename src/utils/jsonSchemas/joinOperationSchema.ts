@@ -1,4 +1,4 @@
-import { JoinOperationEnum } from 'utils/generateSelectorQuery'
+import { JoinOperationEnum } from '@src/utils/generateSelectorQuery'
 
 const JoinOperationEnumKeys = Object.keys(JoinOperationEnum)
   .filter((key) => Number.isNaN(Number(key)))

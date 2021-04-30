@@ -1,7 +1,7 @@
 import JSON5 from 'json5'
 import { QueryBuilder } from 'objection'
 
-import BaseModel from 'database/models/Base'
+import BaseModel from '@src/database/models/Base'
 import getSelectClause from './getSelectClause'
 
 
