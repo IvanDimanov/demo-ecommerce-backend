@@ -11,7 +11,8 @@
   },
   "scripts": {
     "start": "pm2 start ./pm2-local.config.js && pm2 logs",
-    "start-production": "pm2 start ./pm2-production.config.js --no-daemon",
+    "start-production-pm2": "pm2 start ./pm2-production.config.js --no-daemon",
+    "start-production": "node -r ./tsconfig-paths-bootstrap.js ./build/index.js",
     "test": "mocha -r ts-node/register -r tsconfig-paths/register",
     "test-report": "nyc npm run test -- --reporter mochawesome --reporter-options reportDir='./build/test-results/',reportFilename='index',reportPageTitle='demo-ecommerce-test mocha test results',inline=true,cdn=true,charts=true,autoOpen=false",
     "build": "rimraf ./build && tsc --build tsconfig.json && npm run test-report",
