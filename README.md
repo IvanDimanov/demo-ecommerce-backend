@@ -20,3 +20,7 @@ npm start
 ```
 
 Open [http://localhost:8000/swagger](http://localhost:8000/swagger)
+
+## Database
+Database schema can be found [here](https://dbdiagram.io/d/5fa78a6e3a78976d7b7af67f).
+DB Migrations are arranged with [this repo](https://github.com/IvanDimanov/demo-ecommerce-db-migrations).
