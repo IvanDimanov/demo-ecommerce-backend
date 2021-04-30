@@ -19,6 +19,13 @@ export const envVarSchema = {
       minimum: 1,
       maximum: 1_000_000,
     },
+    HOST: {
+      type: 'string',
+      oneOf: [
+        { format: 'ipv4' },
+        { format: 'ipv6' },
+      ],
+    },
     DB_URL: {
       type: 'string',
       format: 'uri',

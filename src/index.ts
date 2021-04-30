@@ -31,13 +31,8 @@ const start = async () => {
 
     addAllRoutes(fastify)
 
-    const { PORT } = (fastify as unknown as { [envConfigKey]: FromSchema<typeof envVarSchema> })[envConfigKey]
-
-    console.log(' ')
-    console.log(' PORT =', PORT)
-    console.log(' ')
-
-    await fastify.listen(PORT)
+    const { PORT, HOST } = (fastify as unknown as { [envConfigKey]: FromSchema<typeof envVarSchema> })[envConfigKey]
+    await fastify.listen(PORT, HOST)
   } catch (error) {
     process.stderr.write(error.stack)
     process.exit(1)
