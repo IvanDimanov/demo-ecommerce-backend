@@ -11,6 +11,8 @@ This project is made as a template for scalable and flexible API endpoints, User
 - TypeScript: [https://www.typescriptlang.org/](https://www.typescriptlang.org/)
 
 ## Run locally
+App can be run locally using docker and [this repo](https://github.com/IvanDimanov/demo-ecommerce-local-env). <br />
+Executing the script below will start the app on your local machine using locally installed DB:
 ```
 git clone git@github.com:IvanDimanov/demo-ecommerce-backend.git
 cd ./demo-ecommerce-backend
